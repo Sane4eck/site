@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{response}}</h1>
+<form action="/test/" method="post">
+    {% csrf_token %}
+    <label for="article_title">Заголовок</label>
+    <input type="text" name="article_title" id="article_title">
+    <label for="article_text">Текст</label>
+    <input type="text" name="article_text" id="article_text">
+    <label for="article_date">Дата</label>
+    <input type="date" name="article_date" id="article_date">
+    <button type="submit">Отправить данные</button>
+</form>
+</body>
+</html>
+<table border="1">
+    <tr>
+        <th></th>
+        <th scope="col">Сумма</th>
+        <th scope="col">Минус</th>
+        <th scope="col">Умножение</th>
+        <th scope="col">Деление</th>
+    </tr>
+    <tr>
+        <td>Число первое: {{responsefirst}}</td>
+        <td rowspan="2">{{response0}}</td>
+        <td rowspan="2">{{response1}}</td>
+        <td rowspan="2">{{response2}}</td>
+        <td rowspan="2">{{response3}}</td>
+    </tr>
+    <tr>
+        <td>Число второе: {{responsesecond}}</td>
+    </tr>
+    </table>

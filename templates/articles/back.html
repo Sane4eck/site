@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+    <h1>Обновление: {{bookinst.book.title}}</h1>
+    <p>Потом поменяю, как разберусь!: {{bookinst.borrower}}</p>
+    <p {% if bookinst.is_overdue %} class="text-danger"{% endif %}>Старая дата: {{bookinst.due_back}}</p>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+        {{ form }}
+        </table>
+        <input type="submit" value="Сохранить" />
+    </form>
+
+<tr>
+  <th><label for="id_renewal_date">Новая дата:</label></th>
+  <td>
+    <input id="id_renewal_date" name="renewal_date" type="text" value="2020-10-11" required />
+    <br />
+    <span class="helptext">Введите дату!По умолчанию я хз что!</span>
+  </td>
+</tr>
+
+
+{% endblock %}
